@@ -44,8 +44,10 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-slate-800 py-5 text-center text-xs text-slate-500">
-        © {new Date().getFullYear()} CleanWash Laundry. All rights reserved.
+      <div className="border-t border-slate-800 py-5 text-center text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+        <span>© {new Date().getFullYear()} CleanWash Laundry. All rights reserved.</span>
+        <span className="hidden sm:inline">·</span>
+        <Link to="/admin/login" className="hover:text-slate-300 transition-colors">Login Admin</Link>
       </div>
     </footer>
   );

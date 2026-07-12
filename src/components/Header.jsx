@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { FiMenu, FiX } from 'react-icons/fi';
+import { FiMenu, FiX, FiLock } from 'react-icons/fi';
 
 const NAV_LINKS = [
   { to: '/', label: 'Beranda' },
@@ -35,6 +35,13 @@ export default function Header() {
               {link.label}
             </NavLink>
           ))}
+          <Link
+            to="/admin/login"
+            title="Login Admin"
+            className="flex items-center gap-1.5 text-sm font-medium text-slate-500 hover:text-primary-600 transition-colors"
+          >
+            <FiLock className="text-base" /> Admin
+          </Link>
           <Link to="/jadwal-penjemputan" className="btn-primary text-sm px-5 py-2">
             Jadwalkan Jemput
           </Link>
@@ -52,6 +59,13 @@ export default function Header() {
               {link.label}
             </NavLink>
           ))}
+          <Link
+            to="/admin/login"
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-2 text-slate-500 font-medium"
+          >
+            <FiLock /> Login Admin
+          </Link>
           <Link to="/jadwal-penjemputan" onClick={() => setOpen(false)} className="btn-primary text-center">
             Jadwalkan Jemput
           </Link>
