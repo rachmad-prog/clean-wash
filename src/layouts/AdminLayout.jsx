@@ -10,7 +10,7 @@ const MENU = [
   { to: '/admin/testimonials', label: 'Testimoni', icon: FiStar },
   { to: '/admin/faqs', label: 'FAQ', icon: FiHelpCircle },
   { to: '/admin/banners', label: 'Banner', icon: FiImage },
-  { to: '/admin/licenses', label: 'Lisensi', icon: FiKey },
+  { to: '/admin/licenses', label: 'Lisensi', icon: FiKey, roles: ['OWNER'] },
 ];
 
 export default function AdminLayout() {
@@ -22,6 +22,8 @@ export default function AdminLayout() {
     navigate('/admin/login');
   };
 
+  const visibleMenu = MENU.filter((item) => !item.roles || item.roles.includes(admin?.role));
+
   return (
     <div className="flex min-h-screen bg-slate-50">
       <aside className="w-64 bg-slate-900 text-slate-300 flex flex-col shrink-0">
@@ -29,7 +31,7 @@ export default function AdminLayout() {
           CleanWash <span className="text-primary-400">Admin</span>
         </div>
         <nav className="flex-1 px-3 py-4 space-y-1">
-          {MENU.map((item) => (
+          {visibleMenu.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}

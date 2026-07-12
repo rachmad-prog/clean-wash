@@ -62,7 +62,14 @@ export default function App() {
         <Route path="testimonials" element={<AdminTestimonials />} />
         <Route path="faqs" element={<AdminFaqs />} />
         <Route path="banners" element={<AdminBanners />} />
-        <Route path="licenses" element={<AdminLicenses />} />
+        <Route
+          path="licenses"
+          element={
+            <ProtectedRoute roles={['OWNER']}>
+              <AdminLicenses />
+            </ProtectedRoute>
+          }
+        />
       </Route>
 
       <Route path="*" element={<NotFound />} />
