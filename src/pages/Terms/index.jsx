@@ -2,7 +2,7 @@ export default function Terms() {
   return (
     <div>
       <div className="bg-primary-50 py-16 text-center">
-        <h1 className="text-4xl font-extrabold text-slate-800">Syarat & Ketentuan</h1>
+        <h1 className="font-display text-4xl font-bold text-ink">Syarat & Ketentuan</h1>
       </div>
       <section className="section max-w-3xl prose prose-slate">
         <p className="text-slate-600 mb-4">

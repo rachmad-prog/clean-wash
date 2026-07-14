@@ -8,7 +8,7 @@ export default function Testimoni() {
   return (
     <div>
       <div className="bg-primary-50 py-16 text-center">
-        <h1 className="text-4xl font-extrabold text-slate-800">Testimoni Pelanggan</h1>
+        <h1 className="font-display text-4xl font-bold text-ink">Testimoni Pelanggan</h1>
         <p className="text-slate-500 mt-3">Apa kata mereka tentang layanan kami</p>
       </div>
       <section className="section">

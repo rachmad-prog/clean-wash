@@ -1,23 +1,27 @@
-import { FiClock, FiShield, FiTruck, FiSmile } from 'react-icons/fi';
+import { FiAward, FiUsers, FiTruck, FiCreditCard } from 'react-icons/fi';
 import Reveal from './Reveal';
 
 const FEATURES = [
-  { icon: FiClock, title: 'Proses Cepat', desc: 'Pengerjaan mulai dari 6 jam hingga 2 hari.' },
-  { icon: FiShield, title: 'Terjamin Aman', desc: 'Pakaian ditangani dengan hati-hati & higienis.' },
-  { icon: FiTruck, title: 'Antar Jemput Gratis', desc: 'Layanan pickup & delivery tanpa biaya tambahan.' },
-  { icon: FiSmile, title: 'Pelanggan Puas', desc: 'Rating rata-rata 4.8/5 dari ribuan ulasan.' },
+  { icon: FiAward, title: 'Merk Terpercaya', desc: 'Dipercaya ribuan pelanggan dengan reputasi kualitas cucian bersih, wangi, dan profesional.', accent: 'bg-primary-500' },
+  { icon: FiUsers, title: 'Tim Profesional', desc: 'Layanan ditangani tim berdedikasi dan berpengalaman dalam menangani berbagai jenis kain.', accent: 'bg-sun-500' },
+  { icon: FiTruck, title: 'Express 3 Jam Selesai', desc: 'Untuk kebutuhan mendesak, kami hadir dengan layanan express tanpa mengurangi kualitas.', accent: 'bg-plum-500' },
+  { icon: FiCreditCard, title: 'Pembayaran Mudah', desc: 'Bayar dengan berbagai metode: tunai, transfer bank, QRIS, hingga dompet digital.', accent: 'bg-primary-600' },
 ];
 
 export default function Features() {
   return (
-    <section className="section bg-slate-50 rounded-3xl">
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <section className="section">
+      <Reveal direction="up" className="text-center max-w-2xl mx-auto mb-12">
+        <span className="eyebrow">Kenapa Kami</span>
+        <h2 className="section-title">Mengapa Harus CleanWash?</h2>
+      </Reveal>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {FEATURES.map((f, i) => (
-          <Reveal key={f.title} direction="zoom" delay={i * 120} className="text-center">
-            <div className="w-14 h-14 rounded-2xl bg-primary-500 text-white flex items-center justify-center mx-auto mb-4 text-2xl">
+          <Reveal key={f.title} direction="zoom" delay={i * 100} className="card p-6">
+            <div className={`w-12 h-12 rounded-xl ${f.accent} text-white flex items-center justify-center mb-4 text-xl`}>
               <f.icon />
             </div>
-            <h3 className="font-semibold text-slate-800 mb-1">{f.title}</h3>
+            <h3 className="font-display font-semibold text-ink mb-2">{f.title}</h3>
             <p className="text-sm text-slate-500">{f.desc}</p>
           </Reveal>
         ))}

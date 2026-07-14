@@ -10,15 +10,16 @@ export default function OutletCard({ outlet }) {
         className="w-full h-44 object-cover"
       />
       <div className="p-5">
-        <h3 className="font-semibold text-slate-800 mb-2">{outlet.name}</h3>
+        <h3 className="font-display font-semibold text-ink mb-2">{outlet.name}</h3>
+        <p className="text-xs uppercase tracking-wide text-primary-600 font-semibold mb-3">{outlet.city}</p>
         <p className="text-sm text-slate-500 flex items-center gap-2 mb-1">
-          <FiMapPin className="shrink-0" /> {outlet.address}
+          <FiMapPin className="shrink-0 text-primary-500" /> {outlet.address}
         </p>
         <p className="text-sm text-slate-500 flex items-center gap-2 mb-1">
-          <FiClock className="shrink-0" /> {outlet.openTime} - {outlet.closeTime}
+          <FiClock className="shrink-0 text-primary-500" /> {outlet.openTime} - {outlet.closeTime}
         </p>
         <p className="text-sm text-slate-500 flex items-center gap-2 mb-4">
-          <FiPhone className="shrink-0" /> {outlet.phone}
+          <FiPhone className="shrink-0 text-primary-500" /> {outlet.phone}
         </p>
         <Link to={`/outlet/${outlet.slug}`} className="btn-outline w-full text-sm py-2">
           Lihat Detail
