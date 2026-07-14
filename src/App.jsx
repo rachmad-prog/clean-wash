@@ -25,6 +25,7 @@ import AdminTestimonials from './pages/Admin/Testimonials';
 import AdminFaqs from './pages/Admin/Faqs';
 import AdminBanners from './pages/Admin/Banners';
 import AdminLicenses from './pages/Admin/Licenses';
+import AdminUsers from './pages/Admin/Users';
 
 export default function App() {
   return (
@@ -67,6 +68,14 @@ export default function App() {
           element={
             <ProtectedRoute roles={['OWNER']}>
               <AdminLicenses />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="users"
+          element={
+            <ProtectedRoute roles={['OWNER']}>
+              <AdminUsers />
             </ProtectedRoute>
           }
         />

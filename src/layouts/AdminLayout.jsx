@@ -1,5 +1,5 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
-import { FiHome, FiMapPin, FiPackage, FiUsers, FiStar, FiHelpCircle, FiImage, FiKey, FiLogOut } from 'react-icons/fi';
+import { FiHome, FiMapPin, FiPackage, FiUsers, FiStar, FiHelpCircle, FiImage, FiKey, FiSettings, FiLogOut } from 'react-icons/fi';
 import { useAuth } from '../hooks/useAuth';
 
 const MENU = [
@@ -11,6 +11,7 @@ const MENU = [
   { to: '/admin/faqs', label: 'FAQ', icon: FiHelpCircle },
   { to: '/admin/banners', label: 'Banner', icon: FiImage },
   { to: '/admin/licenses', label: 'Lisensi', icon: FiKey, roles: ['OWNER'] },
+  { to: '/admin/users', label: 'Kelola User', icon: FiSettings, roles: ['OWNER'] },
 ];
 
 export default function AdminLayout() {
