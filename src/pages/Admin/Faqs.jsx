@@ -34,10 +34,10 @@ export default function Faqs() {
   };
 
   return (
-    <div className="p-8">
-      <div className="flex justify-between items-center mb-6">
+    <div className="p-4 sm:p-8">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 mb-6">
         <h1 className="text-2xl font-bold text-slate-800">Kelola FAQ</h1>
-        <button onClick={() => setShowForm(true)} className="btn-primary text-sm py-2"><FiPlus /> Tambah</button>
+        <button onClick={() => setShowForm(true)} className="btn-primary text-sm py-2 justify-center"><FiPlus /> Tambah</button>
       </div>
 
       {loading ? <p className="text-slate-400">Memuat...</p> : (
@@ -55,8 +55,8 @@ export default function Faqs() {
       )}
 
       {showForm && (
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
-          <form onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-2xl p-6 w-full max-w-md space-y-4">
+        <div className="fixed inset-0 bg-black/40 flex items-start sm:items-center justify-center z-50 p-4 overflow-y-auto">
+          <form onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-2xl p-6 w-full max-w-md space-y-4 my-8 sm:my-0 max-h-[90vh] overflow-y-auto">
             <div className="flex justify-between items-center">
               <h2 className="text-lg font-bold">Tambah FAQ</h2>
               <button type="button" onClick={() => setShowForm(false)}><FiX /></button>

@@ -67,10 +67,10 @@ export default function Users() {
   };
 
   return (
-    <div className="p-8">
-      <div className="flex justify-between items-center mb-2">
+    <div className="p-4 sm:p-8">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 mb-2">
         <h1 className="text-2xl font-bold text-slate-800">Kelola User</h1>
-        <button onClick={openAdd} className="btn-primary text-sm py-2">
+        <button onClick={openAdd} className="btn-primary text-sm py-2 justify-center">
           <FiPlus /> Tambah User
         </button>
       </div>
@@ -117,8 +117,8 @@ export default function Users() {
       )}
 
       {showForm && (
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
-          <form onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-2xl p-6 w-full max-w-md space-y-4">
+        <div className="fixed inset-0 bg-black/40 flex items-start sm:items-center justify-center z-50 p-4 overflow-y-auto">
+          <form onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-2xl p-6 w-full max-w-md space-y-4 my-8 sm:my-0 max-h-[90vh] overflow-y-auto">
             <div className="flex justify-between items-center">
               <h2 className="text-lg font-bold">{editing ? 'Edit User' : 'Tambah User'}</h2>
               <button type="button" onClick={() => { setShowForm(false); setEditing(null); }}><FiX /></button>

@@ -22,10 +22,10 @@ export default function Orders() {
   };
 
   return (
-    <div className="p-8">
-      <div className="flex justify-between items-center mb-6">
+    <div className="p-4 sm:p-8">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 mb-6">
         <h1 className="text-2xl font-bold text-slate-800">Kelola Pesanan</h1>
-        <select className="input w-56" value={status} onChange={(e) => setStatus(e.target.value)}>
+        <select className="input w-full sm:w-56" value={status} onChange={(e) => setStatus(e.target.value)}>
           <option value="">Semua Status</option>
           {STATUSES.map((s) => <option key={s} value={s}>{ORDER_STATUS_LABEL[s]}</option>)}
         </select>

@@ -42,10 +42,10 @@ export default function Outlets() {
   };
 
   return (
-    <div className="p-8">
-      <div className="flex justify-between items-center mb-6">
+    <div className="p-4 sm:p-8">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 mb-6">
         <h1 className="text-2xl font-bold text-slate-800">Kelola Outlet</h1>
-        <button onClick={openCreate} className="btn-primary text-sm py-2"><FiPlus /> Tambah Outlet</button>
+        <button onClick={openCreate} className="btn-primary text-sm py-2 justify-center"><FiPlus /> Tambah Outlet</button>
       </div>
 
       {loading ? (
@@ -77,8 +77,8 @@ export default function Outlets() {
       )}
 
       {showForm && (
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
-          <form onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-2xl p-6 w-full max-w-lg space-y-4">
+        <div className="fixed inset-0 bg-black/40 flex items-start sm:items-center justify-center z-50 p-4 overflow-y-auto">
+          <form onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-2xl p-6 w-full max-w-lg space-y-4 my-8 sm:my-0 max-h-[90vh] overflow-y-auto">
             <div className="flex justify-between items-center">
               <h2 className="text-lg font-bold">{editing ? 'Edit Outlet' : 'Tambah Outlet'}</h2>
               <button type="button" onClick={() => setShowForm(false)}><FiX /></button>
@@ -87,11 +87,11 @@ export default function Outlets() {
             <input className="input" placeholder="Kota" {...register('city', { required: true })} />
             <input className="input" placeholder="Alamat" {...register('address', { required: true })} />
             <input className="input" placeholder="Telepon" {...register('phone', { required: true })} />
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <input className="input" placeholder="Jam Buka (07:00)" {...register('openTime', { required: true })} />
               <input className="input" placeholder="Jam Tutup (21:00)" {...register('closeTime', { required: true })} />
             </div>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <input className="input" placeholder="Latitude" {...register('latitude')} />
               <input className="input" placeholder="Longitude" {...register('longitude')} />
             </div>
