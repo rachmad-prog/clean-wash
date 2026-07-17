@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-html { scroll-behavior: smooth; }
-body { @apply font-sans text-slate-600 bg-white; }
+html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
+body { @apply font-sans text-slate-600 bg-white; overflow-x: hidden; width: 100%; }
+#root { overflow-x: clip; }
 
 @layer components {
   .btn-primary {

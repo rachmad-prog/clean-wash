@@ -34,15 +34,15 @@ export default function Hero() {
               alt="Laundry service"
               className="rounded-3xl shadow-card w-full object-cover aspect-square md:aspect-[4/3]"
             />
-            <div className="badge-pill absolute -top-4 -left-4 sm:left-2 max-w-[210px]">
+            <div className="badge-pill absolute top-2 left-2 sm:-top-4 sm:-left-4 max-w-[180px] sm:max-w-[210px]">
               <span className="badge-icon bg-primary-500"><FiTruck /></span>
               <span className="text-sm font-semibold text-ink">Pickup dalam 30 menit</span>
             </div>
-            <div className="badge-pill absolute top-1/2 -translate-y-1/2 -right-4 sm:right-0 max-w-[210px]">
+            <div className="badge-pill absolute top-1/2 -translate-y-1/2 right-2 sm:-right-4 max-w-[180px] sm:max-w-[210px]">
               <span className="badge-icon bg-sun-500"><FiTag /></span>
               <span className="text-sm font-semibold text-ink">Harga mulai dari IDR 8.000</span>
             </div>
-            <div className="badge-pill absolute -bottom-4 left-6 max-w-[210px]">
+            <div className="badge-pill absolute bottom-2 left-2 sm:-bottom-4 sm:left-6 max-w-[180px] sm:max-w-[210px]">
               <span className="badge-icon bg-plum-500"><FiZap /></span>
               <span className="text-sm font-semibold text-ink">Express 3 jam selesai</span>
             </div>

@@ -25,8 +25,8 @@ export default function Reveal({
   const hiddenTransforms = {
     up: 'translate-y-10 opacity-0',
     down: '-translate-y-10 opacity-0',
-    left: 'translate-x-10 opacity-0',
-    right: '-translate-x-10 opacity-0',
+    left: '-translate-x-10 opacity-0',
+    right: 'translate-x-10 opacity-0',
     zoom: 'scale-90 opacity-0',
     fade: 'opacity-0',
   };

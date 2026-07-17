@@ -9,7 +9,7 @@ export default function About() {
           alt="Tentang kami"
           className="rounded-3xl shadow-card w-full object-cover aspect-[4/3]"
         />
-        <div className="absolute -bottom-6 -right-6 bg-primary-600 text-white rounded-2xl shadow-pill px-6 py-4 text-center">
+        <div className="absolute bottom-3 right-3 sm:-bottom-6 sm:-right-6 bg-primary-600 text-white rounded-2xl shadow-pill px-6 py-4 text-center">
           <p className="font-display text-2xl font-bold leading-none">10+</p>
           <p className="text-xs mt-1 opacity-90">Tahun Pengalaman</p>
         </div>
