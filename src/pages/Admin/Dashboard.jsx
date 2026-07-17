@@ -3,7 +3,7 @@ import { getDashboardStats } from '../../services/authService';
 import { formatCurrency } from '../../utils/formatCurrency';
 import { FiMapPin, FiPackage, FiUsers, FiDollarSign, FiClock, FiMail } from 'react-icons/fi';
 
-const CARD_STYLE = 'bg-white rounded-2xl shadow-sm p-6 flex items-center gap-4';
+const CARD_STYLE = 'bg-white rounded-2xl shadow-sm p-3 sm:p-6 flex items-center gap-3 sm:gap-4';
 
 export default function Dashboard() {
   const { data: stats, loading } = useFetch(getDashboardStats, []);
@@ -23,15 +23,15 @@ export default function Dashboard() {
       {loading ? (
         <p className="text-slate-400">Memuat statistik...</p>
       ) : (
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
           {cards.map((c) => (
             <div key={c.label} className={CARD_STYLE}>
-              <div className={`w-12 h-12 rounded-xl text-white flex items-center justify-center text-xl ${c.color}`}>
+              <div className={`w-9 h-9 sm:w-12 sm:h-12 shrink-0 rounded-xl text-white flex items-center justify-center text-base sm:text-xl ${c.color}`}>
                 <c.icon />
               </div>
-              <div>
-                <p className="text-sm text-slate-500">{c.label}</p>
-                <p className="text-xl font-bold text-slate-800">{c.value}</p>
+              <div className="min-w-0">
+                <p className="text-xs sm:text-sm text-slate-500 truncate">{c.label}</p>
+                <p className="text-base sm:text-xl font-bold text-slate-800">{c.value}</p>
               </div>
             </div>
           ))}
